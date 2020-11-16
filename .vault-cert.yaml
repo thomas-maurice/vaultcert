@@ -1,0 +1,20 @@
+login_command: vault login -method=userpass -path=${USERPASS_PATH}/userpass username=${USER} password=$(cat $HOME/.vault-password)
+default_ssh_backend: dev
+default_pki_backend: dev
+ssh:
+  dev:
+    path: dev/ssh
+  stag:
+    path: stag/ssh
+  prod:
+    path: prod/ssh
+pki:
+  dev:
+    path: dev/pki/pki_intermediate
+  stag:
+    path: stag/pki/pki_intermediate
+  prod:
+    path: prod/pki/pki_intermediate
+nss:
+  chrome:
+    path: /home/thomas/.pki/nssdb

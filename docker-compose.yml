@@ -1,0 +1,7 @@
+version: '3'
+services:
+  vault:
+    image: "vault:latest"
+    command: server -dev -dev-root-token-id=devroottoken
+    ports:
+    - "8200:8200"

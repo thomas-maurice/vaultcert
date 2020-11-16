@@ -1,0 +1,13 @@
+defaultEntryPoints = ["http", "https"]
+[entryPoints]
+  [entryPoints.http]
+  address = ":80"
+  [entryPoints.https]
+  address = ":443"
+    [entryPoints.https.tls]
+	  [entryPoints.https.tls.ClientCA]
+    	files = ["ca.crt"]
+    	optional = false
+      [[entryPoints.https.tls.certificates]]
+      certFile = "server.crt"
+      keyFile = "server.key"
